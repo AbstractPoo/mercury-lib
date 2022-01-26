@@ -19,16 +19,18 @@ local function object(class, properties)
         local options = setDefaults({
 			Length = 0.2,
 			Style = Enum.EasingStyle.Linear,
-			Direction = Enum.EasingDirection.InOut
+			Direction = Enum.EasingDirection.InOut,
+            Callback = function() end
 		}, options)
-		callback = callback or function() return end
 
 		local info = TweenInfo.new(options.Length, options.Style, options.Direction)
 
-		options.Length = nil
+        local callback = options.Callback
+        options.Callback = nil		
+        options.Length = nil
 		options.Style = nil 
 		options.Direction = nil
-
+        
 		local tween = TweenService:Create(localObject, info, options); tween:Play()
 
 		tween.Completed:Connect(function()
