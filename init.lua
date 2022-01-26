@@ -1,4 +1,4 @@
-local env = getgenv()
+local env = (getgenv and getgenv()) or _G
 
 env.mercuryUI = {
     importCache = {},
