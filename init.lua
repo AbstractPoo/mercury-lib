@@ -31,7 +31,7 @@ function env.import(path)
         if mercuryUI.dev then
             content = require(game.ReplicatedStorage[path])
         else
-            content = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/AbstractPoo/mercury-lib/main/".. path .. "lua"))()
+            content = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/AbstractPoo/mercury-lib/main/" .. path .. "lua"))()
         end
     elseif type(path) == "number" then
         content = game:GetObjects("rbxassetid://" .. path)[1]
