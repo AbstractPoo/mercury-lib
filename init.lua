@@ -19,6 +19,7 @@ function env:import(path)
         content = game:GetObjects("rbxassetid://" .. path)[1]
         return content
     end
+    
     self.importCache[path] = content
 
     return content
