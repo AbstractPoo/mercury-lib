@@ -26,4 +26,6 @@ function env.import(path)
     return content
 end
 
-return mercuryUI.Library
+env.import("main")
+
+return env.mercuryUI.Library
