@@ -1,8 +1,9 @@
 local env = (getgenv and getgenv()) or _G
 
 env.mercuryUI = {
-    importCache = [],
-    Library = {}
+    importCache = {},
+    Library = {},
+    cursedObjects = {}
 }
 
 
@@ -26,6 +27,11 @@ function env.import(path)
     return content
 end
 
-env.import("main")
+function env.curse(guiObject, theme)
+    table.insert(self.cursedObjects, {
+        Object = guiObject,
+        Theme = theme
+    })
+end
 
 return env.mercuryUI.Library
